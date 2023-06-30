@@ -3,6 +3,6 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class PkdQueryService {
   findPkd(profession: string) {
-    return null;
+    throw new Error('No repository found');
   }
 }

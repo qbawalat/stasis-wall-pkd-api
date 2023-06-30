@@ -16,7 +16,7 @@ describe('PkdQueryService', () => {
     expect(service).toBeDefined();
   });
 
-  it('should ', () => {
-    expect(service).toBeDefined();
+  it('should return pkd', async () => {
+    expect(service.findPkd('engineer')).toBeTruthy();
   });
 });
