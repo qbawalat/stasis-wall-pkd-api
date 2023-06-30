@@ -15,4 +15,8 @@ describe('PkdQueryService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('should ', () => {
+    expect(service).toBeDefined();
+  });
 });
