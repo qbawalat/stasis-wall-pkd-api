@@ -30,7 +30,7 @@ describe('PkdQueryController', () => {
     jest
       .spyOn(service, 'findPkd')
       .mockImplementation((profession: string) => SERVICE_RESPONSE_MOCK);
-    const pkd = await controller.getPkd(GET_PARAMETER_MOCK);
+    const pkd = await controller.get(GET_PARAMETER_MOCK);
     expect(service.findPkd).toBeCalledWith(GET_PARAMETER_MOCK);
     expect(service.findPkd).toBeCalledTimes(1);
     expect(pkd).toEqual(SERVICE_RESPONSE_MOCK);
