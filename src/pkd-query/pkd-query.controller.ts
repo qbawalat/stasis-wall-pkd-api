@@ -5,7 +5,7 @@ import { PkdQueryService } from './pkd-query.service';
 export class PkdQueryController {
   constructor(private readonly pkdQueryService: PkdQueryService) {}
 
-  getPkd(profession: string) {
+  get(profession: string) {
     return this.pkdQueryService.findPkd(profession);
   }
 }
