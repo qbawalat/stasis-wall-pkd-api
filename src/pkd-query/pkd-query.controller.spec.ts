@@ -24,7 +24,7 @@ describe('PkdQueryController', () => {
     expect(service).toBeDefined();
   });
 
-  it('should call pkd-query service get method', async () => {
+  it('should call pkd-query service on get method', async () => {
     const SERVICE_RESPONSE_MOCK = 'Pkd call mock';
     const GET_PARAMETER_MOCK = 'frontend developer';
     jest
