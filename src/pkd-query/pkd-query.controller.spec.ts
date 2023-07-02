@@ -25,13 +25,14 @@ describe('PkdQueryController', () => {
   });
 
   it('should call pkd-query service get method', async () => {
-    const SERVICE_MOCK_RESPONSE = 'Pkd call mock';
+    const SERVICE_RESPONSE_MOCK = 'Pkd call mock';
+    const GET_PARAMETER_MOCK = 'frontend developer';
     jest
       .spyOn(service, 'findPkd')
-      .mockImplementation((profession: string) => SERVICE_MOCK_RESPONSE);
-    const pkd = await controller.getPkd('frontend developer');
+      .mockImplementation((profession: string) => SERVICE_RESPONSE_MOCK);
+    const pkd = await controller.getPkd(GET_PARAMETER_MOCK);
+    expect(service.findPkd).toBeCalledWith(GET_PARAMETER_MOCK);
     expect(service.findPkd).toBeCalledTimes(1);
-    expect(service.findPkd).toBeCalledWith('frontend developer');
-    expect(pkd).toEqual(SERVICE_MOCK_RESPONSE);
+    expect(pkd).toEqual(SERVICE_RESPONSE_MOCK);
   });
 });
