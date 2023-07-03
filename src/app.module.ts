@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PkdQueryModule } from './pkd-query/pkd-query.module';
-import { FilterSearch } from './filter-search/filter-search';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [PkdQueryModule],
+  imports: [PkdQueryModule, MongooseModule.forRoot('mongodb://localhost/nest')],
   controllers: [AppController],
-  providers: [AppService, FilterSearch],
+  providers: [AppService],
 })
 export class AppModule {}
